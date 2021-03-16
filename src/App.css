@@ -1,0 +1,47 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 100px;
+}
+
+.logo_div{
+  display: flex;
+}
+
+.logo_div > img{
+  width: 100px;
+}
+
+.input_div{
+  display: grid;
+  grid-column: 1;
+  gap: 10px;
+}
+
+.main_app{
+  margin: 0 100px;
+  width: 30%;
+  border: 2px solid black;
+}
+
+li{
+  list-style: none;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+li:active:nth-child(odd){
+    background-color: aqua;
+}
+li:active:nth-child(even){
+    background-color: red;
+}
+
+ul{
+  padding-inline-start: 20px !important;
+  padding-inline-end: 20px !important;
+}
+
+
