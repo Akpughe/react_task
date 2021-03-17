@@ -1,19 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 const Main = () => {
   const entryList = [
-    'Entry1',
-    'Entry2',
-    'Entry3',
-    'Entry4',
-    'Entry5',
-    'Entry6',
+    { id: 1, entry: 'Entry1' },
+    { id: 2, entry: 'Entry2' },
+    { id: 3, entry: 'Entry3' },
+    { id: 4, entry: 'Entry4' },
+    { id: 5, entry: 'Entry5' },
+    { id: 6, entry: 'Entry6' },
   ];
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const menuClick = (id) => {
+    setSelectedItem(id);
+  };
+
   return (
     <div className="main_app">
       <ul>
-        {entryList.map((item, idx) => {
-          return <li>{item}</li>;
+        {entryList.map((item) => {
+          return (
+            <li
+              key={item.id}
+              style={
+                selectedItem === item.id ? { backgroundColor: 'grey' } : {}
+              }
+              onClick={() => menuClick(item.id)}
+            >
+              {item.entry}
+            </li>
+          );
         })}
       </ul>
     </div>
